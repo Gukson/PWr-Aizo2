@@ -1,0 +1,3 @@
+/Users/kuba/CLionProjects/AiZO2/cmake-build-debug/CMakeFiles/AiZO2.dir
+/Users/kuba/CLionProjects/AiZO2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kuba/CLionProjects/AiZO2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -31,6 +31,7 @@ vector<vector<int> > MatrixGraf::load(string filename) {
         }
         cout << endl;
     }
+    return matrix;
 
 }
 

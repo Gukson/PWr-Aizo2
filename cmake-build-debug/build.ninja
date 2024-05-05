@@ -79,6 +79,12 @@ build CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o: CXX_COMPILER__AiZO2_
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/graf/neighbours/Node
 
+build CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/mst/matrix/MST_Matrix.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/mst/matrix
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target AiZO2
@@ -87,7 +93,7 @@ build CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o: CXX_COMPILER__AiZO2_
 #############################################
 # Link the executable AiZO2
 
-build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/matrix/MatrixGraf.cpp.o CMakeFiles/AiZO2.dir/gui/GUI.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Neighbour.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o
+build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/matrix/MatrixGraf.cpp.o CMakeFiles/AiZO2.dir/gui/GUI.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Neighbour.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   POST_BUILD = :

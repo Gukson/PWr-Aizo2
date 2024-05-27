@@ -13,8 +13,8 @@ using namespace std;
 class Neighbour {
 
 public:
-
-    void load(string filename);
+    vector<vector<Node> > matrix;
+    vector<vector<Node> >  load(string filename);
 private:
     vector<int> stringSpliter(string line);
 };

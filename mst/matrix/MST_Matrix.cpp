@@ -15,10 +15,6 @@ void MST_Matrix::findMST(vector<vector<int>> matrix) {
 
     set<int> availableWays;
     while (!(availableWays = findAllAvailableWaysToGO(visited, matrix)).empty()) {
-        for(int way: availableWays){
-            cout << way << " ";
-        }
-        cout << endl;
         for(int val: mstWays){
             availableWays.erase(val);
         }
@@ -27,6 +23,7 @@ void MST_Matrix::findMST(vector<vector<int>> matrix) {
         mstWays.insert(results[0]);
         visited[results[2]] = true;
         visited[results[3]] = true;
+        cout << results[2] << " -> " << results[3] << endl;
     }
 }
 

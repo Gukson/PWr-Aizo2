@@ -51,39 +51,51 @@ build cmake_object_order_depends_target_AiZO2: phony || CMakeFiles/AiZO2.dir
 
 build CMakeFiles/AiZO2.dir/main.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/main.cpp || cmake_object_order_depends_target_AiZO2
   DEP_FILE = CMakeFiles/AiZO2.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir
 
 build CMakeFiles/AiZO2.dir/graf/matrix/MatrixGraf.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/graf/matrix/MatrixGraf.cpp || cmake_object_order_depends_target_AiZO2
   DEP_FILE = CMakeFiles/AiZO2.dir/graf/matrix/MatrixGraf.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/graf/matrix
 
 build CMakeFiles/AiZO2.dir/gui/GUI.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/gui/GUI.cpp || cmake_object_order_depends_target_AiZO2
   DEP_FILE = CMakeFiles/AiZO2.dir/gui/GUI.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/gui
 
 build CMakeFiles/AiZO2.dir/graf/neighbours/Neighbour.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/graf/neighbours/Neighbour.cpp || cmake_object_order_depends_target_AiZO2
   DEP_FILE = CMakeFiles/AiZO2.dir/graf/neighbours/Neighbour.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/graf/neighbours
 
 build CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/graf/neighbours/Node/Node.cpp || cmake_object_order_depends_target_AiZO2
   DEP_FILE = CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/graf/neighbours/Node
 
 build CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/mst/matrix/MST_Matrix.cpp || cmake_object_order_depends_target_AiZO2
   DEP_FILE = CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/mst/matrix
+
+build CMakeFiles/AiZO2.dir/graf/neighbours/mst/MSTNeighbours.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/graf/neighbours/mst/MSTNeighbours.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/graf/neighbours/mst/MSTNeighbours.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/graf/neighbours/mst
+
+build CMakeFiles/AiZO2.dir/objects/wektor.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/objects/wektor.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/objects/wektor.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/objects
 
 
 # =============================================================================
@@ -93,8 +105,8 @@ build CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o: CXX_COMPILER__AiZO2_unsc
 #############################################
 # Link the executable AiZO2
 
-build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/matrix/MatrixGraf.cpp.o CMakeFiles/AiZO2.dir/gui/GUI.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Neighbour.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/matrix/MatrixGraf.cpp.o CMakeFiles/AiZO2.dir/gui/GUI.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Neighbour.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/Node/Node.cpp.o CMakeFiles/AiZO2.dir/mst/matrix/MST_Matrix.cpp.o CMakeFiles/AiZO2.dir/graf/neighbours/mst/MSTNeighbours.cpp.o CMakeFiles/AiZO2.dir/objects/wektor.cpp.o
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   POST_BUILD = :
   PRE_LINK = :

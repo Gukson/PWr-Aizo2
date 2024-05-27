@@ -14,4 +14,7 @@ add_executable(AiZO2 main.cpp
         graf/neighbours/Node/Node.h
         mst/matrix/MST_Matrix.cpp
         mst/matrix/MST_Matrix.h
-        mst/matrix/MST_Matrix.h)
+        mst/matrix/MST_Matrix.h
+        graf/neighbours/mst/MSTNeighbours.cpp
+        objects/wektor.cpp
+        objects/wektor.cpp)

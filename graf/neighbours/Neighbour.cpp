@@ -7,8 +7,7 @@
 #include <fstream>
 #include <iostream>
 
-void Neighbour::load(string filename) {
-    vector<vector<Node> > matrix;
+vector<vector<Node> >  Neighbour::load(string filename) {
     ifstream file;
     file.open("data/dataFiles/" + filename);
     string line;
@@ -34,6 +33,7 @@ void Neighbour::load(string filename) {
         }
         cout << endl;
     }
+    return matrix;
 }
 
 vector<int> Neighbour::stringSpliter(string line) {

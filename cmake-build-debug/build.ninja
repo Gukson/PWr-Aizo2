@@ -85,6 +85,18 @@ build CMakeFiles/AiZO2.dir/graf/neighborhoodList/Node/Node.cpp.o: CXX_COMPILER__
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/graf/neighborhoodList/Node
 
+build CMakeFiles/AiZO2.dir/data/generator/Generator.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/data/generator/Generator.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/data/generator/Generator.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/data/generator
+
+build CMakeFiles/AiZO2.dir/data/generator/edge/Edge.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/data/generator/edge/Edge.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/data/generator/edge/Edge.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/data/generator/edge
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target AiZO2
@@ -93,7 +105,7 @@ build CMakeFiles/AiZO2.dir/graf/neighborhoodList/Node/Node.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable AiZO2
 
-build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/incidentMatrix/IncidentMatrixGraf.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/NeighborhoodList.cpp.o CMakeFiles/AiZO2.dir/mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/Node/Node.cpp.o
+build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/incidentMatrix/IncidentMatrixGraf.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/NeighborhoodList.cpp.o CMakeFiles/AiZO2.dir/mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/Node/Node.cpp.o CMakeFiles/AiZO2.dir/data/generator/Generator.cpp.o CMakeFiles/AiZO2.dir/data/generator/edge/Edge.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   POST_BUILD = :

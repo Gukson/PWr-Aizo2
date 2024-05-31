@@ -16,4 +16,8 @@ add_executable(AiZO2
         mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.h
         graf/neighborhoodList/Node/Node.cpp
         graf/neighborhoodList/Node/Node.h
+        data/generator/Generator.cpp
+        data/generator/Generator.h
+        data/generator/edge/Edge.cpp
+        data/generator/edge/Edge.h
 )

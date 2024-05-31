@@ -15,6 +15,7 @@ vector<vector<Node> >  NeighborhoodList::load(string filename, bool directed) {
     //najpierw liczba krawędzi, potem liczba wierzchołków
     vector result = stringSpliter(line);
 
+
     for(int x = 0; x < result[1]; x++){
         vector<Node> temp;
         matrix.push_back(temp);
@@ -61,4 +62,48 @@ vector<int> NeighborhoodList::stringSpliter(string line) {
         temp.push_back(stoi(str));
     }
     return temp;
+}
+
+vector<vector<Node> > NeighborhoodList::loadFromGenerator(Generator generator, bool directed) {
+    matrix.clear();
+
+    for(int x = 0; x < generator.get_nodes(); x++){
+        vector<Node> temp;
+        matrix.push_back(temp);
+    }
+
+    for(Edge e: generator.get_edges()){
+        if(directed){
+            Node n = Node(e.get_to(),e.get_weight());
+            matrix[e.get_from()].push_back(n);
+        } else{
+            Node n = Node(e.get_to(),e.get_weight());
+            if(!containsNode(matrix[e.get_from()],n.get_value())){
+                matrix[e.get_from()].push_back(n);
+            }
+
+            Node n2 = Node(e.get_from(), e.get_weight());
+            if(!containsNode(matrix[e.get_to()],n2.get_value())){
+                matrix[e.get_to()].push_back(n2);
+            }
+
+        }
+    }
+    for(int x = 0; x<matrix.size(); x++){
+        cout << x << ": ";
+        for(auto & y : matrix[x]){
+            cout << y.get_value() << " ";
+        }
+        cout << endl;
+    }
+    return matrix;
+}
+
+bool NeighborhoodList::containsNode(const vector<Node> &n, int to) {
+    for(Node node: n){
+        if(node.get_value() == to){
+            return true;
+        }
+    }
+    return false;
 }

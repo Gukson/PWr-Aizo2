@@ -2,21 +2,24 @@
 #include "mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.h"
 #include "graf/neighborhoodList/NeighborhoodList.h"
 #include "mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.h"
+#include "data/generator/Generator.h"
 
 using namespace std;
 
 int main() {
+    Generator g = Generator(5);
+    g.generate(100);
+    g.saveInFile("test.txt");
+
     IncidentMatrixGraf m = IncidentMatrixGraf();
-    m.load_matrix("input1.txt", false);
+    m.loadFromGenerator(g, false);
     MstIncidentMatrixPrimAlgorithm i = MstIncidentMatrixPrimAlgorithm();
     i.findMST(m.matrix);
 
     NeighborhoodList n = NeighborhoodList();
-    n.load("input1.txt", false);
+    n.loadFromGenerator(g, false);
     MstNeighborhoodListPrimAlgorithm nn = MstNeighborhoodListPrimAlgorithm();
     nn.findMST(n.matrix);
 
     return 0;
 }
-
-//TODO Delete absolute path in MstNeighborhoodListPrimAlgorithm.h

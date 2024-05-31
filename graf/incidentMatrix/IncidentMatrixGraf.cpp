@@ -9,7 +9,7 @@
 
 
 vector<vector<int> > IncidentMatrixGraf::load_matrix(string filename, bool directed) {
-
+    matrix.clear();
     ifstream file;
     file.open("data/dataFiles/" + filename);
     string line;
@@ -60,4 +60,28 @@ vector<int> IncidentMatrixGraf::stringSpliter(string line) {
         temp.push_back(stoi(str));
     }
     return temp;
+}
+
+vector<vector<int> > IncidentMatrixGraf::loadFromGenerator(Generator generator, bool directed){
+    matrix.clear();
+    for(Edge e: generator.get_edges()){
+        vector<int> myVector(generator.get_edges().size(), 0);
+        myVector[e.get_from()] = e.get_weight();
+
+        if(!directed){
+            myVector[e.get_to()] = e.get_weight();
+        } else{
+            myVector[e.get_to()] = -1;
+        }
+        matrix.push_back(myVector);
+    }
+
+    for(int x = 0; x< generator.get_nodes(); x++){
+        for(int y = 0; y < generator.get_edges().size(); y++){
+            cout << matrix[y][x] << " ";
+        }
+        cout << endl;
+    }
+
+    return matrix;
 }

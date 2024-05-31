@@ -8,9 +8,9 @@
 
 class Node {
     public:
-        Node(int v, int w){
-            value = v;
-            weight = w;
+        Node(int value, int weight){
+            this -> value = value;
+            this -> weight = weight;
         }
         int get_value();
         int get_weight();

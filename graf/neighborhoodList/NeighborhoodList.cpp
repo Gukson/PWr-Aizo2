@@ -2,12 +2,12 @@
 // Created by Kuba on 30/04/2024.
 //
 
-#include "Neighbour.h"
+#include "NeighborhoodList.h"
 #include <string>
 #include <fstream>
 #include <iostream>
 
-vector<vector<Node> >  Neighbour::load(string filename) {
+vector<vector<Node> >  NeighborhoodList::load(string filename, bool directed) {
     ifstream file;
     file.open("data/dataFiles/" + filename);
     string line;
@@ -22,21 +22,29 @@ vector<vector<Node> >  Neighbour::load(string filename) {
 
     while (getline(file,line)){
         vector<int> temp =  stringSpliter(line);
-        Node n = Node(temp[1],temp[2]);
-        matrix[temp[0]].push_back(n);
+        if(directed){
+            Node n = Node(temp[1],temp[2]);
+            matrix[temp[0]].push_back(n);
+        } else{
+            Node n = Node(temp[1],temp[2]);
+            matrix[temp[0]].push_back(n);
+            Node n2 = Node(temp[0],temp[2]);
+            matrix[temp[1]].push_back(n2);
+        }
     }
 
+    //wyświetlanie
     for(int x = 0; x<matrix.size(); x++){
         cout << x << ": ";
-        for(int y = 0; y < matrix[x].size(); y++){
-            cout << matrix[x][y].get_value() << " ";
+        for(auto & y : matrix[x]){
+            cout << y.get_value() << " ";
         }
         cout << endl;
     }
     return matrix;
 }
 
-vector<int> Neighbour::stringSpliter(string line) {
+vector<int> NeighborhoodList::stringSpliter(string line) {
     vector<int> temp;
     int k = 0;
     string str;

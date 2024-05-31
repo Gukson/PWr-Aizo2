@@ -2,13 +2,13 @@
 // Created by Kuba on 29/04/2024.
 //
 
-#include "MatrixGraf.h"
+#include "IncidentMatrixGraf.h"
 #include <string>
 #include <fstream>
 #include <iostream>
 
 
-vector<vector<int> > MatrixGraf::load(string filename) {
+vector<vector<int> > IncidentMatrixGraf::load_matrix(string filename, bool directed) {
 
     ifstream file;
     file.open("data/dataFiles/" + filename);
@@ -21,7 +21,14 @@ vector<vector<int> > MatrixGraf::load(string filename) {
         vector<int> temp =  stringSpliter(line);
         vector<int> myVector(result[1], 0);
         myVector[temp[0]] = temp[2];
-        myVector[temp[1]] = -1;
+
+        //Jeżeli graf jest skierowany to w miejsce konca wpiszmey -1 (zakladamy ze nie mamy wag ujemnych na ten moment) jeżeli jednak nie bedzie to wpisujemy koszt
+        if(!directed){
+            myVector[temp[1]] = temp[2];
+        } else{
+            myVector[temp[1]] = -1;
+        }
+
         matrix.push_back(myVector);
     }
 
@@ -35,7 +42,8 @@ vector<vector<int> > MatrixGraf::load(string filename) {
 
 }
 
-vector<int> MatrixGraf::stringSpliter(string line) {
+
+vector<int> IncidentMatrixGraf::stringSpliter(string line) {
     vector<int> temp;
     int k = 0;
     string str;

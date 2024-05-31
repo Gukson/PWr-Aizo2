@@ -1,22 +1,22 @@
-#include <iostream>
-#include "./graf/matrix/MatrixGraf.h"
-#include "./graf/neighbours/Neighbour.h"
-#include "./mst/matrix/MST_Matrix.h"
-#include "./graf/neighbours/mst/MSTNeighbours.h"
+#include "graf/incidentMatrix/IncidentMatrixGraf.h"
+#include "mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.h"
+#include "graf/neighborhoodList/NeighborhoodList.h"
+#include "mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.h"
 
 using namespace std;
 
 int main() {
-    MatrixGraf m = MatrixGraf();
-    m.load("input1.txt");
-    MST_Matrix ms = MST_Matrix();
-    ms.findMST(m.matrix);
+    IncidentMatrixGraf m = IncidentMatrixGraf();
+    m.load_matrix("input1.txt", false);
+    MstIncidentMatrixPrimAlgorithm i = MstIncidentMatrixPrimAlgorithm();
+    i.findMST(m.matrix);
 
-    Neighbour m2 = Neighbour();
-    m2.load("input1.txt");
-    MSTNeighbours m22 = MSTNeighbours();
-    m22.findMST(m2.matrix);
-
+    NeighborhoodList n = NeighborhoodList();
+    n.load("input1.txt", false);
+    MstNeighborhoodListPrimAlgorithm nn = MstNeighborhoodListPrimAlgorithm();
+    nn.findMST(n.matrix);
 
     return 0;
 }
+
+//TODO Delete absolute path in MstNeighborhoodListPrimAlgorithm.h

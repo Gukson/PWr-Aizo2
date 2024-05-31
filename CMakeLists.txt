@@ -3,18 +3,17 @@ project(AiZO2)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(AiZO2 main.cpp
-        graf/matrix/MatrixGraf.cpp
-        graf/matrix/MatrixGraf.h
-        gui/GUI.cpp
-        gui/GUI.h
-        graf/neighbours/Neighbour.cpp
-        graf/neighbours/Neighbour.h
-        graf/neighbours/Node/Node.cpp
-        graf/neighbours/Node/Node.h
-        mst/matrix/MST_Matrix.cpp
-        mst/matrix/MST_Matrix.h
-        mst/matrix/MST_Matrix.h
-        graf/neighbours/mst/MSTNeighbours.cpp
-        objects/wektor.cpp
-        objects/wektor.cpp)
+
+add_executable(AiZO2
+        main.cpp
+        graf/incidentMatrix/IncidentMatrixGraf.cpp
+        graf/incidentMatrix/IncidentMatrixGraf.h
+        graf/neighborhoodList/NeighborhoodList.cpp
+        graf/neighborhoodList/NeighborhoodList.h
+        mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.cpp
+        mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.h
+        mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.cpp
+        mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.h
+        graf/neighborhoodList/Node/Node.cpp
+        graf/neighborhoodList/Node/Node.h
+)

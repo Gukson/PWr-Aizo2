@@ -20,4 +20,15 @@ add_executable(AiZO2
         data/generator/Generator.h
         data/generator/edge/Edge.cpp
         data/generator/edge/Edge.h
+        bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp
+        bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.h
+        mst/kruskal/unionFind/UnionFind.cpp
+        mst/kruskal/unionFind/UnionFind.h
+        mst/kruskal/kruskal/Kruskal.cpp
+        mst/kruskal/kruskal/Kruskal.h
+        mst/kruskal/kruskal/Kruskal.h
+        mst/kruskal/incidentMatrix/KruskalIncidentMatrix.cpp
+        mst/kruskal/incidentMatrix/KruskalIncidentMatrix.h
+        mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.cpp
+        mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.h
 )

@@ -4,6 +4,7 @@
 #include "mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.h"
 #include "data/generator/Generator.h"
 #include "mst/kruskal/incidentMatrix/KruskalIncidentMatrix.h"
+#include "mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.h"
 #include "mst/kruskal/kruskal/Kruskal.h"
 
 using namespace std;
@@ -25,12 +26,20 @@ int main() {
     Kruskal* k = new KruskalIncidentMatrix(m.matrix);
     k->kruskal(k->getEdgesAmount());
 
+
+
     cout << endl;
 
     NeighborhoodList n = NeighborhoodList();
-    n.loadFromGenerator(g, false);
+//    n.loadFromGenerator(g, false);
+    n.load("input1.txt", false);
     MstNeighborhoodListPrimAlgorithm nn = MstNeighborhoodListPrimAlgorithm();
     nn.findMST(n.matrix);
+
+    cout << endl;
+
+    Kruskal* k2 = new KruskalNeighborhoodMatrix(n.matrix);
+    k2->kruskal(k2->getEdgesAmount());
 
     return 0;
 }

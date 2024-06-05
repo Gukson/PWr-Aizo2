@@ -7,6 +7,8 @@
 #include "mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.h"
 #include "mst/kruskal/kruskal/Kruskal.h"
 #include "bestWay/djikstra/neighboorList/DjikstraNeighborList.h"
+#include "bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.h"
+
 
 using namespace std;
 
@@ -44,10 +46,15 @@ int main() {
 //    Kruskal* k2 = new KruskalNeighborhoodMatrix(n.matrix);
 //    k2->kruskal(k2->getEdgesAmount());
 
-NeighborhoodList n3 = NeighborhoodList();
-n3.load("input2.txt", true);
-DjikstraNeighborList d = DjikstraNeighborList(n3.matrix);
-d.testDjikstra();
+    NeighborhoodList n3 = NeighborhoodList();
+    n3.load("input2.txt", true);
+    DjikstraNeighborList d = DjikstraNeighborList(n3.matrix);
+    d.testSimpleDjikstra(0);
+
+    IncidentMatrixGraf n4 = IncidentMatrixGraf();
+    n4.load_matrix("input2.txt", true);
+    DjikstraIncidentMatrix d2 = DjikstraIncidentMatrix(n4.matrix);
+    d2.testSimpleDjikstra(0);
 
     return 0;
 }

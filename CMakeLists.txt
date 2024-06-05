@@ -31,4 +31,6 @@ add_executable(AiZO2
         mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.h
         bestWay/djikstra/neighboorList/DjikstraNeighborList.cpp
         bestWay/djikstra/neighboorList/DjikstraNeighborList.h
+        bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp
+        bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.h
 )

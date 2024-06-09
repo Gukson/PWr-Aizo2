@@ -89,13 +89,13 @@ vector<vector<Node> > NeighborhoodList::loadFromGenerator(Generator generator, b
 
         }
     }
-    for(int x = 0; x<matrix.size(); x++){
-        cout << x << ": ";
-        for(auto & y : matrix[x]){
-            cout << y.get_value() << " ";
-        }
-        cout << endl;
-    }
+//    for(int x = 0; x<matrix.size(); x++){
+//        cout << x << ": ";
+//        for(auto & y : matrix[x]){
+//            cout << y.get_value() << " ";
+//        }
+//        cout << endl;
+//    }
     return matrix;
 }
 

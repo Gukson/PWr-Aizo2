@@ -14,7 +14,7 @@ int Kruskal::kruskal(int n) {
         if (uf.find(r[0]) != uf.find(r[1])) {
             uf.unite(r[1], r[0]);
             mst_weight += r[2];
-            cout << r[0] << " -> " << r[1] << endl;
+//            cout << r[0] << " -> " << r[1] << endl;
         }
         e++;
     }

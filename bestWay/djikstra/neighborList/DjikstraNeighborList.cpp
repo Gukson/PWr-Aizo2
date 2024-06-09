@@ -35,25 +35,27 @@ void DjikstraNeighborList::testSimpleDjikstra(int startNode) {
 
     vector<int> distance = vector<int>();
     distance.resize(matrix.size(),numeric_limits<int>::max());
-    cout << "Wierzcholek startowy: " << startNode << endl;
+//    cout << "Wierzcholek startowy: " << startNode << endl;
     for(int x = 0; x < matrix.size(); x++){
         int w = 0;
         if(lista[x].first != numeric_limits<int>::max()){
             int temp = x;
             while(temp != startNode){
                 w += lista[temp].first;
-                cout << temp << " <- ";
+//                cout << temp << " <- ";
                 temp = lista[temp].second;
             }
-            cout << startNode << " : " << w << endl;
+//            cout << startNode << " : " << w << endl;
         }
 
     }
+
 }
 
 void DjikstraNeighborList::testDjikstra() {
     for(int x = 0; x < matrix.size(); x++){
+        cout << x << endl;
         testSimpleDjikstra(x);
-        cout << endl;
+//        cout << endl;
     }
 }

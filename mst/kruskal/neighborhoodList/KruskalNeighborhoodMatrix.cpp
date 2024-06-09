@@ -26,9 +26,9 @@ void KruskalNeighborhoodMatrix::createOrder() {
 
 
     //wyświetlanie uzyskanych krawędzi
-    for (const auto& p : edgesVector) {
-        cout << "Edge (" << p.first << ", " << matrix[p.first][p.second].get_value() << ") - Weight: " << matrix[p.first][p.second].get_weight() << std::endl;
-    }
+//    for (const auto& p : edgesVector) {
+//        cout << "Edge (" << p.first << ", " << matrix[p.first][p.second].get_value() << ") - Weight: " << matrix[p.first][p.second].get_weight() << std::endl;
+//    }
 
 }
 

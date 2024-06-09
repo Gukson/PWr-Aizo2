@@ -121,17 +121,35 @@ build CMakeFiles/AiZO2.dir/mst/kruskal/neighborhoodList/KruskalNeighborhoodMatri
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/mst/kruskal/neighborhoodList
 
-build CMakeFiles/AiZO2.dir/bestWay/djikstra/neighboorList/DjikstraNeighborList.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/bestWay/djikstra/neighboorList/DjikstraNeighborList.cpp || cmake_object_order_depends_target_AiZO2
-  DEP_FILE = CMakeFiles/AiZO2.dir/bestWay/djikstra/neighboorList/DjikstraNeighborList.cpp.o.d
+build CMakeFiles/AiZO2.dir/bestWay/djikstra/neighborList/DjikstraNeighborList.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/bestWay/djikstra/neighborList/DjikstraNeighborList.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/bestWay/djikstra/neighborList/DjikstraNeighborList.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
-  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/bestWay/djikstra/neighboorList
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/bestWay/djikstra/neighborList
 
 build CMakeFiles/AiZO2.dir/bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp || cmake_object_order_depends_target_AiZO2
   DEP_FILE = CMakeFiles/AiZO2.dir/bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/bestWay/djikstra/incidentMatrix
+
+build CMakeFiles/AiZO2.dir/bestWay/ford-bellman/neighborList/BellmanFordNeighborList.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/bestWay/ford-bellman/neighborList/BellmanFordNeighborList.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/bestWay/ford-bellman/neighborList/BellmanFordNeighborList.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/bestWay/ford-bellman/neighborList
+
+build CMakeFiles/AiZO2.dir/bestWay/ford-bellman/incidentMatrix/BellmanFordIncidentMatrix.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/bestWay/ford-bellman/incidentMatrix/BellmanFordIncidentMatrix.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/bestWay/ford-bellman/incidentMatrix/BellmanFordIncidentMatrix.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/bestWay/ford-bellman/incidentMatrix
+
+build CMakeFiles/AiZO2.dir/time_tester/TestEverything.cpp.o: CXX_COMPILER__AiZO2_unscanned_Debug /Users/kuba/CLionProjects/AiZO2/time_tester/TestEverything.cpp || cmake_object_order_depends_target_AiZO2
+  DEP_FILE = CMakeFiles/AiZO2.dir/time_tester/TestEverything.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/AiZO2.dir
+  OBJECT_FILE_DIR = CMakeFiles/AiZO2.dir/time_tester
 
 
 # =============================================================================
@@ -141,7 +159,7 @@ build CMakeFiles/AiZO2.dir/bestWay/djikstra/incidentMatrix/DjikstraIncidentMatri
 #############################################
 # Link the executable AiZO2
 
-build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/incidentMatrix/IncidentMatrixGraf.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/NeighborhoodList.cpp.o CMakeFiles/AiZO2.dir/mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/Node/Node.cpp.o CMakeFiles/AiZO2.dir/data/generator/Generator.cpp.o CMakeFiles/AiZO2.dir/data/generator/edge/Edge.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/unionFind/UnionFind.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/kruskal/Kruskal.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/incidentMatrix/KruskalIncidentMatrix.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.cpp.o CMakeFiles/AiZO2.dir/bestWay/djikstra/neighboorList/DjikstraNeighborList.cpp.o CMakeFiles/AiZO2.dir/bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp.o
+build AiZO2: CXX_EXECUTABLE_LINKER__AiZO2_Debug CMakeFiles/AiZO2.dir/main.cpp.o CMakeFiles/AiZO2.dir/graf/incidentMatrix/IncidentMatrixGraf.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/NeighborhoodList.cpp.o CMakeFiles/AiZO2.dir/mst/prim/incidentMatrix/MstIncidentMatrixPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/mst/prim/neighborhoodList/MstNeighborhoodListPrimAlgorithm.cpp.o CMakeFiles/AiZO2.dir/graf/neighborhoodList/Node/Node.cpp.o CMakeFiles/AiZO2.dir/data/generator/Generator.cpp.o CMakeFiles/AiZO2.dir/data/generator/edge/Edge.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/unionFind/UnionFind.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/kruskal/Kruskal.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/incidentMatrix/KruskalIncidentMatrix.cpp.o CMakeFiles/AiZO2.dir/mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.cpp.o CMakeFiles/AiZO2.dir/bestWay/djikstra/neighborList/DjikstraNeighborList.cpp.o CMakeFiles/AiZO2.dir/bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp.o CMakeFiles/AiZO2.dir/bestWay/ford-bellman/neighborList/BellmanFordNeighborList.cpp.o CMakeFiles/AiZO2.dir/bestWay/ford-bellman/incidentMatrix/BellmanFordIncidentMatrix.cpp.o CMakeFiles/AiZO2.dir/time_tester/TestEverything.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   OBJECT_DIR = CMakeFiles/AiZO2.dir
   POST_BUILD = :

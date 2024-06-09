@@ -36,9 +36,9 @@ void Generator::generate(int density) {
 
     }
 
-    for(Edge e: edges){
-        cout << e.get_from() << " -> " << e.get_to() << " " << e.get_weight() << endl;
-    }
+//    for(Edge e: edges){
+//        cout << e.get_from() << " -> " << e.get_to() << " " << e.get_weight() << endl;
+//    }
 }
 
 bool Generator::containsEdge(const std::vector<Edge>& e, int from, int to) {

@@ -32,14 +32,7 @@ vector<vector<int> > IncidentMatrixGraf::load_matrix(string filename, bool direc
         matrix.push_back(myVector);
     }
 
-    for(int x = 0; x< result[1]; x++){
-        for(int y = 0; y < result[0]; y++){
-            cout << matrix[y][x] << " ";
-        }
-        cout << endl;
-    }
     return matrix;
-
 }
 
 
@@ -76,12 +69,12 @@ vector<vector<int> > IncidentMatrixGraf::loadFromGenerator(Generator generator, 
         matrix.push_back(myVector);
     }
 
-    for(int x = 0; x< generator.get_nodes(); x++){
-        for(int y = 0; y < generator.get_edges().size(); y++){
-            cout << matrix[y][x] << " ";
-        }
-        cout << endl;
-    }
+//    for(int x = 0; x< generator.get_nodes(); x++){
+//        for(int y = 0; y < generator.get_edges().size(); y++){
+//            cout << matrix[y][x] << " ";
+//        }
+//        cout << endl;
+//    }
 
     return matrix;
 }

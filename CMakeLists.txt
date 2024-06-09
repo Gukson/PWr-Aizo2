@@ -29,8 +29,14 @@ add_executable(AiZO2
         mst/kruskal/incidentMatrix/KruskalIncidentMatrix.h
         mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.cpp
         mst/kruskal/neighborhoodList/KruskalNeighborhoodMatrix.h
-        bestWay/djikstra/neighboorList/DjikstraNeighborList.cpp
-        bestWay/djikstra/neighboorList/DjikstraNeighborList.h
+        bestWay/djikstra/neighborList/DjikstraNeighborList.cpp
+        bestWay/djikstra/neighborList/DjikstraNeighborList.h
         bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.cpp
         bestWay/djikstra/incidentMatrix/DjikstraIncidentMatrix.h
+        bestWay/ford-bellman/neighborList/BellmanFordNeighborList.cpp
+        bestWay/ford-bellman/neighborList/BellmanFordNeighborList.h
+        bestWay/ford-bellman/incidentMatrix/BellmanFordIncidentMatrix.cpp
+        bestWay/ford-bellman/incidentMatrix/BellmanFordIncidentMatrix.h
+        time_tester/TestEverything.cpp
+        time_tester/TestEverything.h
 )

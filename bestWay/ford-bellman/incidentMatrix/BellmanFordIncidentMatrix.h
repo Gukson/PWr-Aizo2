@@ -15,8 +15,8 @@ public:
     BellmanFordIncidentMatrix(vector<vector<int> > matrix){
         this -> matrix = matrix;
     }
-    void testBellman();
-    void testSimpleBellman(int startNode);
+    vector<vector<int>> testBellman();
+    vector<int> testSimpleBellman(int startNode);
 };
 
 

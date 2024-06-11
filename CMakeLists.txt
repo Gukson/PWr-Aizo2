@@ -39,4 +39,5 @@ add_executable(AiZO2
         bestWay/ford-bellman/incidentMatrix/BellmanFordIncidentMatrix.h
         time_tester/TestEverything.cpp
         time_tester/TestEverything.h
+        gui/GUI.cpp
 )

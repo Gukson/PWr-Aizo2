@@ -4,38 +4,30 @@
 
 #include "BellmanFordNeighborList.h"
 
-void BellmanFordNeighborList::testSimpleBellman(int startNode) {
-    vector<pair<int,int>> lista = vector<pair<int,int>>();
+vector<int> BellmanFordNeighborList::testSimpleBellman(int startNode) {
+    int numVertices = matrix.size();
+    vector<int> distances(numVertices, numeric_limits<int>::max());
+    distances[startNode] = 0;
 
-    vector<bool> done = vector<bool>();
-    done.resize(matrix.size(), false);
-
-    lista.resize(matrix.size(), make_pair(numeric_limits<int>::max(),numeric_limits<int>::max()));
-
-    lista[startNode] = make_pair(0,startNode);
-
-
-    while (true){
-        bool changes = false;
-        for(int x = 0; x < matrix.size(); x++){
-            if(!done[x] && lista[x].second != numeric_limits<int>::max()){
-                for(int y = 0; y < matrix[x].size(); y++){
-                    if(matrix[x][y].get_weight() + lista[x].first < lista[matrix[x][y].get_value()].first){
-                        lista[matrix[x][y].get_value()].first = matrix[x][y].get_weight() + lista[x].first;
-                        lista[matrix[x][y].get_value()].second = x;
-                        changes = true;
-                    }
+    // Relaksacja krawędzi
+    for (int i = 0; i < numVertices - 1; ++i) {
+        for (int u = 0; u < numVertices; ++u) {
+            for (Node& neighbor : matrix[u]) {
+                int v = neighbor.get_value();
+                int weight = neighbor.get_weight();
+                if (distances[u] != numeric_limits<int>::max() && distances[u] + weight < distances[v]) {
+                    distances[v] = distances[u] + weight;
                 }
-                done[x] = true;
             }
         }
-
-        if(!changes) break;
     }
+    return distances;
 }
 
-void BellmanFordNeighborList::testBellman() {
-    for(int x = 0; x < matrix.size(); x++){
-        testSimpleBellman(x);
+vector<vector<int>> BellmanFordNeighborList::testBellman() {
+    vector<vector<int> > results = vector<vector<int>>();
+    for(int x = 0; x < matrix[0].size(); x++){
+        results.push_back(testSimpleBellman(x));
     }
+    return results;
 }

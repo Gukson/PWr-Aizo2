@@ -4,58 +4,40 @@
 
 #include "DjikstraNeighborList.h"
 
-void DjikstraNeighborList::testSimpleDjikstra(int startNode) {
-    vector<pair<int,int>> lista = vector<pair<int,int>>();
+vector<int> DjikstraNeighborList::testSimpleDjikstra(int startNode) {
+    int numVertices = matrix.size();
+    vector<int> distances(numVertices, numeric_limits<int>::max());
+    distances[startNode] = 0;
 
-    vector<bool> done = vector<bool>();
-    done.resize(matrix.size(), false);
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    pq.push({0, startNode});
 
-    lista.resize(matrix.size(), make_pair(numeric_limits<int>::max(),numeric_limits<int>::max()));
+    while (!pq.empty()) {
+        int currentVertex = pq.top().second;
+        int currentDistance = pq.top().first;
+        pq.pop();
 
-    lista[startNode] = make_pair(0,startNode);
-
-
-    while (true){
-        bool changes = false;
-        for(int x = 0; x < matrix.size(); x++){
-            if(!done[x] && lista[x].first != numeric_limits<int>::max()){
-                for(int y = 0; y < matrix[x].size(); y++){
-                    if(matrix[x][y].get_weight() < lista[matrix[x][y].get_value()].first){
-                        lista[matrix[x][y].get_value()].first = matrix[x][y].get_weight();
-                        lista[matrix[x][y].get_value()].second = x;
-                        changes = true;
-                    }
-                }
-                done[x] = true;
-            }
+        if (currentDistance > distances[currentVertex]) {
+            continue;
         }
 
-        if(!changes) break;
-    }
-
-    vector<int> distance = vector<int>();
-    distance.resize(matrix.size(),numeric_limits<int>::max());
-//    cout << "Wierzcholek startowy: " << startNode << endl;
-    for(int x = 0; x < matrix.size(); x++){
-        int w = 0;
-        if(lista[x].first != numeric_limits<int>::max()){
-            int temp = x;
-            while(temp != startNode){
-                w += lista[temp].first;
-//                cout << temp << " <- ";
-                temp = lista[temp].second;
+        for (Node neighbor : matrix[currentVertex]) {
+            int neighborVertex = neighbor.get_value();
+            int weight = neighbor.get_weight();
+            int newDist = currentDistance + weight;
+            if (newDist < distances[neighborVertex]) {
+                distances[neighborVertex] = newDist;
+                pq.push({newDist, neighborVertex});
             }
-//            cout << startNode << " : " << w << endl;
         }
-
     }
-
+    return distances;
 }
 
-void DjikstraNeighborList::testDjikstra() {
-    for(int x = 0; x < matrix.size(); x++){
-        cout << x << endl;
-        testSimpleDjikstra(x);
-//        cout << endl;
+vector<vector<int>> DjikstraNeighborList::testDjikstra() {
+    vector<vector<int> > results = vector<vector<int>>();
+    for(int x = 0; x < matrix[0].size(); x++){
+        results.push_back(testSimpleDjikstra(x));
     }
+    return results;
 }

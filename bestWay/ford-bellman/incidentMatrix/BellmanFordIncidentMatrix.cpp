@@ -5,42 +5,44 @@
 #include "BellmanFordIncidentMatrix.h"
 
 
-void BellmanFordIncidentMatrix::testSimpleBellman(int startNode) {
-    vector<pair<int,int>> lista = vector<pair<int,int>>();
+vector<int> BellmanFordIncidentMatrix::testSimpleBellman(int startNode) {
+    int numVertices = matrix.size();
+    int numEdges = matrix[0].size();
+    vector<int> distances(numVertices, numeric_limits<int>::max());
+    distances[startNode] = 0;
 
-    vector<bool> done = vector<bool>();
-    done.resize(matrix.size(), false);
+    // Relaksacja krawędzi
+    for (int i = 0; i < numVertices - 1; ++i) {
+        for (int u = 0; u < numVertices; ++u) {
+            for (int j = 0; j < numEdges; ++j) {
+                int v = -1, weight = 0;
 
-    lista.resize(matrix[0].size(), make_pair(numeric_limits<int>::max(),numeric_limits<int>::max()));
-
-    lista[startNode] = make_pair(0,startNode);
-
-    while(true) {
-        bool changes = false;
-        for (int y = 0; y < matrix[0].size(); y++) {
-            if (!done[y] && lista[y].first != numeric_limits<int>::max()) {
-                for (int x = 0; x < matrix.size(); x++) {
-                    if (matrix[x][y] > 0) {
-                        auto d = find(matrix[x].begin(), matrix[x].end(), -1);
-                        int index = distance(matrix[x].begin(), d);
-                        if (matrix[x][y] + lista[y].first < lista[index].first) {
-                            lista[index].first = matrix[x][y] + lista[y].first;
-                            lista[index].second = y;
-                            changes = true;
+                // Znajdź wierzchołki połączone krawędzią j
+                for (int k = 0; k < numVertices; ++k) {
+                    if (matrix[k][j] != 0) {
+                        if (v == -1) {
+                            v = k;
+                            weight = matrix[k][j];
+                        } else {
+                            v = -1; // więcej niż 1 krawędź wychodząca z u
+                            break;
                         }
-
                     }
                 }
-                done[y] = true;
+
+                if (v != -1 && distances[u] != numeric_limits<int>::max() && distances[u] + weight < distances[v]) {
+                    distances[v] = distances[u] + weight;
+                }
             }
         }
-        if (!changes) break;
     }
-
+    return distances;
 }
 
-void BellmanFordIncidentMatrix::testBellman() {
+vector<vector<int>> BellmanFordIncidentMatrix::testBellman() {
+    vector<vector<int> > results = vector<vector<int>>();
     for(int x = 0; x < matrix[0].size(); x++){
-        testSimpleBellman(x);
+        results.push_back(testSimpleBellman(x));
     }
+    return results;
 }

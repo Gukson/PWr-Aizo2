@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <iostream>
+#include <queue>
 #include "../../../graf/neighborhoodList/Node/Node.h"
 
 using namespace std;
@@ -17,8 +18,8 @@ public:
     DjikstraNeighborList(vector<vector<Node> > matrix){
         this -> matrix = matrix;
     }
-    void testDjikstra();
-    void testSimpleDjikstra(int startNode);
+    vector<vector<int>> testDjikstra();
+    vector<int> testSimpleDjikstra(int startNode);
 };
 
 

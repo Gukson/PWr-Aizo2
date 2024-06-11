@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -16,8 +17,8 @@ public:
     DjikstraIncidentMatrix(vector<vector<int> > matrix){
         this -> matrix = matrix;
     }
-    void testDjikstra();
-    void testSimpleDjikstra(int startNode);
+    vector<vector<int>> testDjikstra();
+    vector<int> testSimpleDjikstra(int startNode);
 
 };
 

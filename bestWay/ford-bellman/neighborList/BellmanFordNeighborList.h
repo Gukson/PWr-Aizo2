@@ -18,8 +18,8 @@ public:
     BellmanFordNeighborList(vector<vector<Node> > matrix){
         this -> matrix = matrix;
     }
-    void testBellman();
-    void testSimpleBellman(int startNode);
+    vector<vector<int>> testBellman();
+    vector<int> testSimpleBellman(int startNode);
 };
 
 

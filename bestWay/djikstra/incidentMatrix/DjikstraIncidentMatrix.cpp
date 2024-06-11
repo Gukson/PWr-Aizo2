@@ -4,59 +4,58 @@
 
 #include "DjikstraIncidentMatrix.h"
 
-void DjikstraIncidentMatrix::testSimpleDjikstra(int startNode) {
-    vector<pair<int,int>> lista = vector<pair<int,int>>();
+vector<int> DjikstraIncidentMatrix::testSimpleDjikstra(int startNode) {
+    int numVertices = matrix.size();
+    int numEdges = matrix[0].size();
+    vector<int> distances(numVertices, numeric_limits<int>::max());
+    distances[startNode] = 0;
 
-    vector<bool> done = vector<bool>();
-    done.resize(matrix.size(), false);
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    pq.push({0, startNode});
 
-    lista.resize(matrix[0].size(), make_pair(numeric_limits<int>::max(),numeric_limits<int>::max()));
+    while (!pq.empty()) {
+        int currentVertex = pq.top().second;
+        int currentDistance = pq.top().first;
+        pq.pop();
 
-    lista[startNode] = make_pair(0,startNode);
+        if (currentDistance > distances[currentVertex]) {
+            continue;
+        }
 
-    while(true){
-        bool changes = false;
-        for(int y = 0; y < matrix[0].size(); y++){
-            if(!done[y] && lista[y].first != numeric_limits<int>::max()){
-                for(int x = 0; x < matrix.size(); x++){
-                    if(matrix[x][y] > 0){
-                        auto d = find(matrix[x].begin(), matrix[x].end(), -1);
-                        int index = distance(matrix[x].begin(),d);
-                        if(matrix[x][y] < lista[index].first){
-                            lista[index].first = matrix[x][y];
-                            lista[index].second = y;
-                            changes = true;
-                        }
+        for (int j = 0; j < numEdges; ++j) {
+            int u = -1, v = -1;
 
+            // Znajdź wierzchołki połączone krawędzią j
+            for (int i = 0; i < numVertices; ++i) {
+                if (matrix[i][j] != 0) {
+                    if (u == -1) {
+                        u = i;
+                    } else {
+                        v = i;
                     }
                 }
-                done[y] = true;
+            }
+
+            if (u != -1 && v != -1) {
+                int weight = abs(matrix[u][j]); // Zakładamy, że waga jest wartością bezwzględną
+                if (u == currentVertex || v == currentVertex) {
+                    int neighbor = (u == currentVertex) ? v : u;
+                    int newDist = currentDistance + weight;
+                    if (newDist < distances[neighbor]) {
+                        distances[neighbor] = newDist;
+                        pq.push({newDist, neighbor});
+                    }
+                }
             }
         }
-        if(!changes) break;
     }
-    vector<int> distance = vector<int>();
-    distance.resize(matrix.size(),numeric_limits<int>::max());
-//    cout << "Wierzcholek startowy: " << startNode << endl;
-    for(int x = 0; x < matrix.size(); x++){
-        int w = 0;
-        if(lista[x].first != numeric_limits<int>::max()){
-            int temp = x;
-            while(temp != startNode){
-                w += lista[temp].first;
-//                cout << temp << " <- ";
-                temp = lista[temp].second;
-            }
-//            cout << startNode << " : " << w << endl;
-        }
-
-    }
-
+    return distances;
 }
 
-void DjikstraIncidentMatrix::testDjikstra() {
+vector<vector<int>> DjikstraIncidentMatrix::testDjikstra() {
+    vector<vector<int> > results = vector<vector<int>>();
     for(int x = 0; x < matrix[0].size(); x++){
-        testSimpleDjikstra(x);
-//        cout << endl;
+        results.push_back(testSimpleDjikstra(x));
     }
+    return results;
 }

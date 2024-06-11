@@ -7,55 +7,55 @@
 using namespace std;
 
 void MstIncidentMatrixPrimAlgorithm::findMST(vector<vector<int>> matrix) {
-    int cost = 0;
+    int numVertices = matrix.size();
+    int numEdges = matrix[0].size();
+    vector<bool> visited(numVertices, false);
+    vector<pair<int, int>> mst; // Krawędzie minimalnego drzewa rozpinającego
 
-    vector<bool> visited_boolean(matrix[0].size(), false);
-    visited_boolean[0] = true;
-    bool flag = true;
-    int sum = 0;
-    while (flag) {
-        vector<int> res = findBestAvailableWay(visited_boolean,matrix);
-        if(res[0] ==numeric_limits<int>::max() ){
-            flag = false;
-            return;
-        }
-        sum += res[1];
-        visited_boolean[res[2]] = true;
+    // Rozpocznij od pierwszego wierzchołka
+    visited[0] = true;
 
-//        cout << res[0] << " -> " << res[2] << endl;
-    }
-}
+    // Powtarzaj, dopóki wszystkie wierzchołki nie zostaną odwiedzone
+    while (mst.size() < numVertices - 1) {
+        int minWeight = numeric_limits<int>::max();
+        int minSrc, minDest;
 
-vector<int> MstIncidentMatrixPrimAlgorithm::findBestAvailableWay(vector<bool> visited_boolean, vector<vector<int>> matrix) {
-    int start = numeric_limits<int>::max();
-    int waga = numeric_limits<int>::max();
-    int docelowy = numeric_limits<int>::max();
-    for(int x = 0; x < visited_boolean.size(); x++){
-        if (visited_boolean[x]){
-            for(int y = 0; y < matrix.size(); y++){
-                int node = findNodes(matrix,y,x);
-                if(matrix[y][x] != 0 && !visited_boolean[node] && matrix[y][x] < waga){
-                    start = x;
-                    waga = matrix[y][x];
-                    docelowy = node;
+        // Przejrzyj wszystkie krawędzie
+        for (int j = 0; j < numEdges; ++j) {
+            int src = -1, dest = -1;
+            bool found = false;
+
+            // Znajdź wierzchołki połączone krawędzią j
+            for (int i = 0; i < numVertices; ++i) {
+                if (matrix[i][j] != 0) {
+                    if (src == -1) {
+                        src = i;
+                    } else {
+                        dest = i;
+                        found = true;
+                        break;
+                    }
                 }
             }
-        }
-    }
 
-    return vector<int>({start, waga, docelowy});
+            // Sprawdź, czy krawędź należy do minimalnego drzewa rozpinającego i czy ma najmniejszą wagę
+            if (found && ((visited[src] && !visited[dest]) || (visited[dest] && !visited[src])) && matrix[dest][j] < minWeight) {
+                minWeight = matrix[dest][j];
+                minSrc = src;
+                minDest = dest;
+            }
+        }
+
+        // Dodaj krawędź o minimalnej wadze do drzewa rozpinającego
+        mst.push_back({minSrc, minDest});
+        cout << minSrc << " - " << minDest << endl;
+        visited[minSrc] = true;
+        visited[minDest] = true;
+    }
 
 }
 
-int MstIncidentMatrixPrimAlgorithm::findNodes(vector<vector<int>> matrix, int edge, int current){
-    vector<int> Nodes = vector<int>();
-    for(int x = 0; x < matrix[edge].size(); x++){
-        if(matrix[edge][x] != 0 && x != current) {
-            return x;
-        }
-    }
-    return 0;
-}
+
 
 
 

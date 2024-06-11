@@ -20,8 +20,7 @@ void MstNeighborhoodListPrimAlgorithm::findMST(vector<vector<Node>> matrix) {
         sum += res[1];
         visited_boolean[res[2]] = true;
 
-//        cout << res[0] << " -> " << res[2] << endl;
-
+        cout << res[0] << " -> " << res[2] << endl;
     }
 }
 

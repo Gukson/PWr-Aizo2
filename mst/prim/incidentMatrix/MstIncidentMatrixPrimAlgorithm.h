@@ -13,9 +13,7 @@ using namespace std;
 class MstIncidentMatrixPrimAlgorithm {
     public:
         void findMST(vector<vector<int> > matrix);
-    private:
-        vector<int> findBestAvailableWay(vector<bool> visited, vector<vector<int>> matrix);
-        int findNodes(vector<vector<int>> matrix, int edge,int current);
+
 };
 
 
